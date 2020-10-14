@@ -1,0 +1,190 @@
+# 1. Брой на потребители.
+SELECT COUNT(username)
+FROM users;
+
+# 2. Най-стария потребител.
+select * from users
+order by birthDate asc limit 1;
+
+# 3. Най-младия потребител.
+select * from users
+order by birthDate desc limit 1;
+
+# 4. Колко юзъра са регистрирани с мейли от abv и колко от gmail и колко с различни отдвата.
+Select case when email like ('%abv%') then 'abv.bg'
+When email like ('%gmail%') then 'gmail.com' else 'other' end as provider, count(email) from users
+group by 1;
+
+# 5. Кои юзъри са banned.
+SELECT * FROM users
+WHERE isBanned='1';
+
+# 6. Изкарайте всички потребители от базата като ги наредите по име в азбучен ред и дата на раждане(от най-младия към най-възрастния).
+SELECT *
+from users
+order by username asc, birthDate asc;
+
+# 7. Изкарайте всички потребители от базата, на които потребителското име започва с a.
+SELECT *
+from users
+where username like 'a%';
+
+# 8. Изкарайте всички потребители от базата, които съдържат а username името си.
+select *
+from users
+where username like '%a%';
+
+#9. Регистрирайте 1 юзър през UI-а и го забранете след това от базата.
+UPDATE users
+SET isBanned=0
+WHERE username='Nikoll';
+
+#10. Брой на всички постове.
+SELECT count(id) 
+FROM posts;
+
+#11. Брой на всички постове групирани по статуса на post-a.
+SELECT postStatus, COUNT(*)
+FROM posts
+GROUP BY postStatus;
+
+# 12. Намерете поста/овете с най-къс caption.
+SELECT caption, length(caption)
+FROM posts order by length(caption) asc limit 1;
+
+# 13. Покажете поста с най-дълъг caption.
+SELECT caption, length(caption)
+FROM posts order by length(caption) desc limit 1;
+
+#14. Кой потребител има най-много постове. Използвайте join заявка. 
+SELECT users.id, users.username, COUNT(posts.userId) AS PostsCount
+FROM users
+JOIN posts
+ON users.id=posts.userId
+GROUP BY users.username
+ORDER BY COUNT(posts.userId) DESC
+LIMIT 1;
+
+#15. Кои потребители имат най-малко постове. Използвайте join заявка. 
+SELECT users.id, users.username, COUNT(posts.userId) AS PostsCount
+FROM users
+JOIN posts
+ON users.id=posts.userId
+GROUP BY username
+ORDER BY COUNT(posts.userId) ASC;
+
+#16. Колко потребителя с по 1 пост имаме. Използвайте join заявка, having clause и вложени заявки. 
+SELECT DISTINCT users.id, users.username, COUNT(posts.userId) AS postscount
+FROM users
+JOIN posts
+ON users.id=posts.userId
+GROUP BY username
+HAVING COUNT(posts.userId)=1;
+
+#17. Кои са постовете с най-много коментари. Използвайте вложена заявка и where clause.
+SELECT*
+FROM posts
+WHERE commentsCount>=1
+ORDER BY commentsCount DESC;
+
+# 18. Покажете най-стария пост.
+SELECT *
+FROM posts
+ORDER BY createdAT ASC
+LIMIT 1;
+
+#19. Покажете най-новия пост. 
+SELECT*
+FROM posts
+ORDER BY createdAT DESC
+LIMIT 1;
+
+#20. Покажете всички постове с празен caption. 
+SELECT *, LENGTH(CAPTION)
+FROM posts
+WHERE LENGTH(CAPTION)<1;
+
+#21. Създайте потребител през UI-а, добавете му public пост през базата и проверете дали се е създал през UI-а. 
+SELECT *
+FROM users
+JOIN posts
+ON users.id=posts.userId
+WHERE username='Tonita'
+ORDER BY createdAt DESC;
+
+#22. Покажете всички постове и коментарите им ако имат такива.
+SELECT *
+FROM posts
+LEFT JOIN comments
+ON posts.id=comments.postId;
+
+#23. Покажете само постове с коментари и самите коментари. 
+SELECT posts.id, comments.id, comments.postId, comments.content, posts.commentsCount
+FROM posts
+JOIN comments
+ON posts.id=comments.postId;
+
+#24. Покажете името на потребителя с най-много коментари. Използвайте join клауза. 
+SELECT users.id, users.username, COUNT(comments.userId) AS CommentsCount
+FROM users
+JOIN comments
+ON users.id=comments.userId
+GROUP BY users.username
+ORDER BY COUNT(comments.userId) DESC
+LIMIT 1;
+
+#25. Покажете всички коментари, към кой пост принадлежат и кой ги е направил. Използвайте join клауза. 
+SELECT comments.id, comments.postId, posts.id, comments.userId, users.id
+FROM comments
+LEFT JOIN posts
+ON comments.postId=posts.id
+LEFT JOIN users
+ON comments.userId=users.id;
+
+#26. Кои потребители са like-нали най-много постове. 
+SELECT usersId, COUNT(*) AS Likes
+FROM users_liked_posts
+GROUP BY usersId
+ORDER BY Likes DESC;
+
+#27. Кои потребители не са like-вали постове. 
+SELECT users.id, users.username, users_liked_posts.usersId, users_liked_posts.postsId
+FROM users
+LEFT JOIN users_liked_posts
+ON users.id=users_liked_posts.usersId
+WHERE postsID IS NULL;
+
+#28. Кои постове имат like-ове. Покажете id на поста и caption. 
+SELECT posts.id, posts.caption, users_liked_posts.postsId
+FROM posts
+JOIN users_liked_posts
+ON posts.id=users_liked_posts.postsId;
+
+#29. Кои постове имат най-много like-ове. Покажете id на поста и caption. 
+SELECT posts.id, posts.caption, users_liked_posts.postsId, COUNT(postsID) AS Likes
+FROM posts
+JOIN users_liked_posts
+ON posts.id=users_liked_posts.postsId
+GROUP BY postsId
+ORDER BY Likes Desc;
+
+#30. Покажете всички потребители, които не follow-ват никого. 
+SELECT users.id, users.username, users_followers_users.usersId_1, users_followers_users.usersId_2
+FROM users
+LEFT JOIN users_followers_users
+ON users.id=users_followers_users.usersId_2
+WHERE usersId_2 IS NULL;
+
+#31. Покажете всички потребители, които не са follow-нати от никого. 
+SELECT users.id, users.username, users_followers_users.usersId_1, users_followers_users.usersId_2
+FROM users
+LEFT JOIN users_followers_users
+ON users.id=users_followers_users.usersId_1
+WHERE usersId_1 IS NULL;
+
+#32. Регистрирайте потребител през UI. Follow-нете някой съществуващ потребител и проверете дали записа го има в базата. 
+SELECT users.id, users.username, users_followers_users.usersId_1, users_followers_users.usersId_2
+FROM users
+LEFT JOIN users_followers_users
+ON users.id=users_followers_users.usersId_1
+WHERE username IN ('zahyzahy4', 'Tonita');
