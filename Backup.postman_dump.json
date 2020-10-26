@@ -1,0 +1,484 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "0c6c73f5-560d-4607-a936-c4a27a64d6a6",
+			"name": "Comments",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"93b7958f-d13a-41c2-b630-2c04973b6e50"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "93b7958f-d13a-41c2-b630-2c04973b6e50",
+					"name": "Post ID Comment",
+					"url": "{{webserviceurl}}/posts/{postId}/comment",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDgxODcsImV4cCI6MTYwMzcxMTc4N30.0m7I_q5iNG7wY4NMHugDmqz1SybVRG_tkxR74Du-FBM"
+							}
+						]
+					},
+					"events": [],
+					"folder": null,
+					"currentHelper": "bearerAuth",
+					"helperAttributes": {
+						"id": "bearer",
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDgxODcsImV4cCI6MTYwMzcxMTc4N30.0m7I_q5iNG7wY4NMHugDmqz1SybVRG_tkxR74Du-FBM"
+					},
+					"collectionId": "0c6c73f5-560d-4607-a936-c4a27a64d6a6",
+					"rawModeData": "{\r\n  \"content\": \"Test1\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		},
+		{
+			"id": "8fd61639-7b7b-4324-b05d-0727dc876a53",
+			"name": "Posts",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"b1c733e8-7dd5-4fe8-a8f6-90155d325496",
+				"bf904318-01ed-4dc9-a1ce-dda6294bbf85",
+				"0fb8df27-48cf-4e78-bc5c-26c0330ae8f6",
+				"62e631db-5fc5-44e1-8168-6f805c8f435e"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "0fb8df27-48cf-4e78-bc5c-26c0330ae8f6",
+					"name": "Get Posts Feed",
+					"url": "",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "8fd61639-7b7b-4324-b05d-0727dc876a53",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "62e631db-5fc5-44e1-8168-6f805c8f435e",
+					"name": "Posts by ID",
+					"url": "{{webserviceurl}}/posts/{id}",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDgxODcsImV4cCI6MTYwMzcxMTc4N30.0m7I_q5iNG7wY4NMHugDmqz1SybVRG_tkxR74Du-FBM"
+							}
+						]
+					},
+					"events": [],
+					"folder": null,
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"currentHelper": "bearerAuth",
+					"helperAttributes": {
+						"id": "bearer",
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDgxODcsImV4cCI6MTYwMzcxMTc4N30.0m7I_q5iNG7wY4NMHugDmqz1SybVRG_tkxR74Du-FBM"
+					},
+					"collectionId": "8fd61639-7b7b-4324-b05d-0727dc876a53",
+					"rawModeData": "{\r\n  \"caption\": \"New caption\",\r\n  \"postStatus\": \"public\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "b1c733e8-7dd5-4fe8-a8f6-90155d325496",
+					"name": "Create new post",
+					"url": "http://161.35.202.130:3100/posts",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDgxODcsImV4cCI6MTYwMzcxMTc4N30.0m7I_q5iNG7wY4NMHugDmqz1SybVRG_tkxR74Du-FBM"
+							}
+						]
+					},
+					"events": [],
+					"folder": null,
+					"currentHelper": "bearerAuth",
+					"helperAttributes": {
+						"id": "bearer",
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDgxODcsImV4cCI6MTYwMzcxMTc4N30.0m7I_q5iNG7wY4NMHugDmqz1SybVRG_tkxR74Du-FBM"
+					},
+					"collectionId": "8fd61639-7b7b-4324-b05d-0727dc876a53",
+					"rawModeData": "{\r\n\"caption\": \"New caption\",\r\n\"coverUrl\": \"https://i.imgur.com/u62Rlx8.jpg\",\r\n\"postStatus\": \"public\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "bf904318-01ed-4dc9-a1ce-dda6294bbf85",
+					"name": "Get Public Request",
+					"url": "{{webserviceurl}}/post/public?take=2&skip=0",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "take",
+							"value": "2",
+							"equals": true,
+							"description": null,
+							"enabled": true
+						},
+						{
+							"key": "skip",
+							"value": "0",
+							"equals": true,
+							"description": null,
+							"enabled": true
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDgxODcsImV4cCI6MTYwMzcxMTc4N30.0m7I_q5iNG7wY4NMHugDmqz1SybVRG_tkxR74Du-FBM"
+							}
+						]
+					},
+					"events": [],
+					"folder": null,
+					"currentHelper": "bearerAuth",
+					"helperAttributes": {
+						"id": "bearer",
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDgxODcsImV4cCI6MTYwMzcxMTc4N30.0m7I_q5iNG7wY4NMHugDmqz1SybVRG_tkxR74Du-FBM"
+					},
+					"collectionId": "8fd61639-7b7b-4324-b05d-0727dc876a53",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		},
+		{
+			"id": "9313b20c-e17c-4619-8308-84351c44ef67",
+			"name": "Users",
+			"description": null,
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"387e4ec3-eaf3-4d8c-b79b-f49ec2d745db",
+				"59621877-312d-4beb-a277-52f653ed2dca",
+				"3b2032d5-5442-4cd0-b90b-aae17b0a487a",
+				"27541621-ad11-4602-a720-73e30908084b",
+				"acea02f5-d0e0-45ab-9e25-87820dc1f42f"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "27541621-ad11-4602-a720-73e30908084b",
+					"name": "LogOut",
+					"url": "{{webserviceurl}}/users/logout",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDU2MjgsImV4cCI6MTYwMzcwOTIyOH0.TPD6hIcY-AwudrnLza0Lf-AO0Xuia2jgArybUjlwdvo"
+							}
+						]
+					},
+					"events": [],
+					"folder": null,
+					"currentHelper": "bearerAuth",
+					"helperAttributes": {
+						"id": "bearer",
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDU2MjgsImV4cCI6MTYwMzcwOTIyOH0.TPD6hIcY-AwudrnLza0Lf-AO0Xuia2jgArybUjlwdvo"
+					},
+					"collectionId": "9313b20c-e17c-4619-8308-84351c44ef67",
+					"rawModeData": "",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "387e4ec3-eaf3-4d8c-b79b-f49ec2d745db",
+					"name": "UsersLogIn",
+					"url": "http://161.35.202.130:3100/users/login",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43ab92b3-3683-4e1d-a3d8-ebc03f5343ce",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 201\", function () {\r\n    pm.response.to.have.status(201);\r\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9313b20c-e17c-4619-8308-84351c44ef67",
+					"rawModeData": "{\r\n  \"usernameOrEmail\": \"evatest\",\r\n  \"password\": \"Evatest1\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "3b2032d5-5442-4cd0-b90b-aae17b0a487a",
+					"name": "Registration",
+					"url": "http://161.35.202.130:3100/users",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "886a05d0-a53d-40e3-a209-99709542b161",
+								"exec": [
+									"pm.test(\"This is to test that response code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Check that response message is already taken\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Username taken\");\r",
+									"pm.test(\"Response time is less than 250ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(250);\r",
+									"});\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"This is to test that response code is 400\", function () {\r\n    pm.response.to.have.status(400);\r\n});\r\npm.test(\"Check that response message is already taken\", function () {\r\n    var jsonData = pm.response.json();\r\n    pm.expect(jsonData.message).to.eql(\"Username taken\");\r\npm.test(\"Response time is less than 250ms\", function () {\r\n    pm.expect(pm.response.responseTime).to.be.below(250);\r\n});\r\n});",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "9313b20c-e17c-4619-8308-84351c44ef67",
+					"rawModeData": "{\r\n  \"username\": \"evatest2\",\r\n  \"email\": \"ev2a@test.com\",\r\n  \"birthDate\": \"12.22.1985\",\r\n  \"password\": \"Evatest12\",\r\n  \"publicInfo\": \"Testing\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "59621877-312d-4beb-a277-52f653ed2dca",
+					"name": "Get User By ID",
+					"url": "http://161.35.202.130:3100/users/4",
+					"description": "",
+					"data": null,
+					"dataOptions": {
+						"raw": {
+							"language": "text"
+						}
+					},
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDYyNTUsImV4cCI6MTYwMzcwOTg1NX0.CUMT3-acYlziJbNVEYlT8OVtSbsnmqBbqt7XwUUc-18"
+							}
+						]
+					},
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "66ca3512-cf87-4ea2-96de-f468de206bb4",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "pm.test(\"Status code is 201\", function () {\r\n    pm.response.to.have.status(201);\r\n});",
+					"currentHelper": "bearerAuth",
+					"helperAttributes": {
+						"id": "bearer",
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDYyNTUsImV4cCI6MTYwMzcwOTg1NX0.CUMT3-acYlziJbNVEYlT8OVtSbsnmqBbqt7XwUUc-18"
+					},
+					"collectionId": "9313b20c-e17c-4619-8308-84351c44ef67",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "acea02f5-d0e0-45ab-9e25-87820dc1f42f",
+					"name": "Get User By Username",
+					"url": "{{webserviceurl}}/users?q=santa",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "q",
+							"value": "santa",
+							"equals": true,
+							"description": null,
+							"enabled": true
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDYyNTUsImV4cCI6MTYwMzcwOTg1NX0.CUMT3-acYlziJbNVEYlT8OVtSbsnmqBbqt7XwUUc-18"
+							}
+						]
+					},
+					"events": [],
+					"folder": null,
+					"currentHelper": "bearerAuth",
+					"helperAttributes": {
+						"id": "bearer",
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mzc3LCJ1c2VybmFtZSI6ImV2YXRlc3QiLCJyb2xlcyI6W3siaWQiOjIsInJvbGUiOjF9XSwiaXNCYW5uZWQiOmZhbHNlLCJpYXQiOjE2MDM3MDYyNTUsImV4cCI6MTYwMzcwOTg1NX0.CUMT3-acYlziJbNVEYlT8OVtSbsnmqBbqt7XwUUc-18"
+					},
+					"collectionId": "9313b20c-e17c-4619-8308-84351c44ef67",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "e3cc6028-1655-4551-a12d-3759ba6ba6bc",
+			"name": "QA env test1",
+			"values": [
+				{
+					"key": "webserviceurl",
+					"value": "http://161.35.202.130:3100",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "",
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "b0066d37-7994-4425-b847-7a8b1bf5f739",
+			"name": "My Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}
